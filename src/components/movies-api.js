@@ -12,41 +12,6 @@
 //   }
 // };
 
-// fetch('https://api.themoviedb.org/3/movie/movie_id/reviews?language=en-US&page=1', options)
-//   .then(response => response.json())
-//   .then(response => console.log(response))
-//   .catch(err => console.error(err));
-
-
-// Import the axios library
-// import axios from "axios";
-
-// // Define the bearer token for API authorization
-// const bearer_token = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjg3MjJhOGM5NzY2NGM0MjMzYzA5YmE5Nzg2ZjdmZCIsInN1YiI6IjY2NjFiNDM4ZmNiNjYzM2MzZmNiYjU4ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NIu4etY43JFm-Qbe6KJbhXB8RJ1zsQuoQXbKrS0CQYI';
-
-// // Define the base URL for the API
-// const BASE_URL = "https://api.themoviedb.org/3";
-
-// // Create an instance of axios with base URL and authorization header
-// const instance = axios.create({
-//   baseURL: BASE_URL,
-//   headers: {
-//     Authorization: bearer_token,
-//   },
-// });
-
-// // Function to get all films
-// export const getFilms = async () => {
-//   const { data } = await instance.get('/all');
-//   const films = Object.values(data);
-//   return films;
-// };
-// Function to get all films
-// export const getFilms = async () => {
-//   const { data } = await instance.get('/trending');
-//   return data.results;
-// };
-
 
 import axios from 'axios';
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
@@ -59,7 +24,22 @@ const options = {
 
 export const getFilms = async () => {
     //const { data } = await instance.get('/all');
-    const response = await axios.get(`/trending/movie/week`, options)
+    const response = await axios.get(`/trending/movie/day`, options)
+    console.log("response >>", response);
     return response.data;
 };
+
+export const getFilmDetails = async movieId => {
+  const response = await axios.get(`/movie/${movieId}`, options);
+  return response.data;
+};
+
+
+//blended-03
+// export const fetchFilm = async moveId => {
+//   const { data } = await axios.get(`/name/${id}`);
+//   const country = transformCountryData(Object.values(data));
+
+//   return country[0];
+// };
 
