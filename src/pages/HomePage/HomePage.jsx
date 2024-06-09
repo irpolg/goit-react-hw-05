@@ -6,12 +6,12 @@
 // export default HomePage
 
 import { useEffect, useState } from 'react';
-import { MovieList } from '../../components/MovieList/MovieList';
+import {MovieList} from '../../components/MovieList/MovieList';
 import { getFilms } from '../../components/movies-api';
 // import Loader from '../../components/Loader/Loader';
 import css from './HomePage.module.css';
 
-export const HomePage = () => {
+export default function HomePage() {
 const [films, setFilms] = useState([]);
 // const [isLoading, setIsLoading] = useState(false);
 
@@ -33,10 +33,10 @@ const [films, setFilms] = useState([]);
     return (
         <div>
         {/* {isLoading && <Loader />} */}
-            <h2 className={css.title}>Trending movies this week</h2>
+            <h2 className={css.title}>Trending today</h2>
             <MovieList films={films} />
         </div>
   );
-};
+}
 
 //blended-03

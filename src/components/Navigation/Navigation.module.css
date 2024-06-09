@@ -1,10 +1,11 @@
 .nav {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
 .navLink {
     font-size: 24px;
+    font-weight: 700;
 }
 
 .isActive {
