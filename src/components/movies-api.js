@@ -26,23 +26,3 @@ export const getFilms = async () => {
   const films = Object.values(data);
   return films;
 };
-
-// Function to fetch trending movies for the day
-export const fetchFilms = async () => {
-  const response = await instance.get("/trending/movie/day");
-  return response.data.results;
-};
-
-// Function to search for films based on a query
-export const searchFilms = async (query) => {
-    const response = await instance.get("/search/movie", {
-        params: {
-            query,
-            page: 1,
-            language: "en-US",
-            include_adult: true,
-        },
-    });
-
-    return response.data.results;
-};
