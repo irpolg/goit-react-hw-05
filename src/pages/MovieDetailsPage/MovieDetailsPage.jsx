@@ -1,4 +1,5 @@
-import MovieInfo from '../../components/MovieInfo/MovieInfo';
+import { MovieInfo, Container } from '../../components/MovieInfo/MovieInfo';
+
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFilmDetails } from '../../components/movies-api';
@@ -20,8 +21,10 @@ export default function MovieDetailsPage () {
   }, [movieId]);
 
   return (
-    <div>
-        <MovieInfo {...currentMovie} />
+      <div>
+            <Container>
+                <MovieInfo {...currentMovie} />
+            </Container>
     </div>
   );
 }
