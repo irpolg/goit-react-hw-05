@@ -1,4 +1,5 @@
-import { MovieInfo, Container } from '../../components/MovieInfo/MovieInfo';
+import { MovieInfo } from '../../components/MovieInfo/MovieInfo';
+import { Container } from '../../components/Container/Container';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

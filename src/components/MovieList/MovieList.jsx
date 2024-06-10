@@ -13,7 +13,7 @@ export const MovieList = ({ films }) => {
       {films.map(({ id, title }) => {
         return (
           <GridItem key={id}>
-            <Link to={`/film/${id}`}>
+            <Link to={`/movies/${id}`}>
                     <h3>{title}</h3>
             </Link>
           </GridItem>

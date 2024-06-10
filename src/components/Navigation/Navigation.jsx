@@ -19,4 +19,4 @@ export default function Navigation() {
   );
 }
 
-// див github і вебінар 9-10
+

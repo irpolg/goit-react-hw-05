@@ -34,8 +34,12 @@ export const getFilmDetails = async movieId => {
   return response.data;
 };
 
-
+export const getSearchFilm = async (query) => {
+    const response = await axios.get(`/search/movie?query=${query}`, options);
+    return response.data;
+}
 //blended-03
+//'https://api.themoviedb.org/3/search/movie?query=dog&include_adult=false&language=en-US&page=1', options)
 // export const fetchFilm = async moveId => {
 //   const { data } = await axios.get(`/name/${id}`);
 //   const country = transformCountryData(Object.values(data));
