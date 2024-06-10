@@ -38,6 +38,22 @@ export const getSearchFilm = async (query) => {
     const response = await axios.get(`/search/movie?query=${query}`, options);
     return response.data;
 }
+
+// export const getMovieCast = async movieId => {
+//   const response = await axios.get(`/movie/${movieId}/credits`, options);
+//   return response.data;
+// };
+export const getFilmCast = async movieId => {
+  const response = await axios.get(`/movie/${movieId}/credits`, options);
+  return response.data;
+};
+
+export const getFilmReviews = async movieId => {
+  const response = await axios.get(`/movie/${movieId}/reviews`, options);
+  return response.data;
+};
+
+
 //blended-03
 //'https://api.themoviedb.org/3/search/movie?query=dog&include_adult=false&language=en-US&page=1', options)
 // export const fetchFilm = async moveId => {

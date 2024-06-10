@@ -1,4 +1,4 @@
-
+import css from './SearchForm.module.css';
 
 export const SearchForm = ({ onSubmit }) => {
     const handleSubmit = (event) => {
@@ -7,11 +7,19 @@ export const SearchForm = ({ onSubmit }) => {
         console.log("value >>", value);
         onSubmit(value);
     }
-    return (
-      
+    return (      
         <form onSubmit={handleSubmit}>
-          <input name="search" type="text" placeholder='search movie' />
-          <button type="submit" >Submit</button>
+            <input 
+                className={css.searchInput}    
+                name="search"
+                type="text"
+                placeholder='search movie' />
+            <button className={css.searchBtn} type="submit" >Submit</button>
         </form>
   )
 }
+
+
+            {/* className={css.searchInput}
+                    //<form className={css.searchForm} onSubmit={handleSubmit}>
+            <button className={css.searchBtn} type="submit" >Submit</button> */}
