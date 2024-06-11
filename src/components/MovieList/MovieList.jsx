@@ -13,7 +13,7 @@ export const MovieList = ({ films }) => {
             <GridItem key={id}>
                 <Link to={{
                     pathname: `/movies/${id}`,
-                    state: { from: location }
+                    state: { location }
                 }} >
                 <h3>{title}</h3>
                 </Link>

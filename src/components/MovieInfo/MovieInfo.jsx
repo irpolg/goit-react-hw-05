@@ -1,7 +1,4 @@
 import css from './MovieInfo.module.css';
-//import MovieCast from '../MovieCast/MovieCast';
-//import MovieReviews from '../MovieReviews/MovieReviews';
-//import { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
 const defaultImg = {
@@ -10,7 +7,7 @@ const defaultImg = {
   title: 'Title not found',
 };
 
-export const MovieInfo = ({ id, poster_path, title, overview }) => {
+export const MovieInfo = ({ id, poster_path, title, overview, vote_average, genres }) => {
     return (
         <>
         <div className={css.wrapper}>
@@ -20,33 +17,26 @@ export const MovieInfo = ({ id, poster_path, title, overview }) => {
                         : defaultImg.poster}
                     alt={title || defaultImg.title} />
             </div>
+
             <div className={css.box}>
-                <h3 className={css.title}>
+                <h2 className={css.title}>
                     {/* {title || defaultImg.title} */}
                     <Link to={`/movies/${id}`} state={location} className={css.movieName}>
                         {title || defaultImg.title}
                     </Link>
-                </h3>
-                <p className={css.accent}>
-                    Overview: 
-                </p>  
+                    </h2>
+                <h3 className={css.accent}>User score:</h3>
+                <p> {vote_average}</p>
+                <h3 className={css.accent}>Overview:</h3>  
                 <p className={css.overview}>{overview}</p>
+                <h3>Genres</h3>
+                <ul className={css.genresList}>
+                    {genres?.map(({ id, name }) => (
+                        <li key={id}>{name}</li>
+                    ))}
+                </ul>    
             </div>
-            </div>
-            {/* <Suspense>
-                <MovieCast movieId={id} />
-            </Suspense>
-            <Suspense>
-                <MovieReviews movieId={id} />
-            </Suspense> */}
+        </div>
         </>
     )
 };
-
-
-// Suspense - це компонент, який дозволяє затримати відображення
-// певного вмісту (наприклад, компонента) до тих пір,
-// поки не завантажаться необхідні дані.
-    // fallback для компонента Suspense React 
-    // ви вказуєте елемент, який має відображатися 
-    // під час очікування завантаження компонента
