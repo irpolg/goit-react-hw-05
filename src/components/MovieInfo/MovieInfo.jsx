@@ -33,12 +33,12 @@ export const MovieInfo = ({ id, poster_path, title, overview }) => {
                 <p className={css.overview}>{overview}</p>
             </div>
             </div>
-            <Suspense>
+            {/* <Suspense>
                 <MovieCast movieId={id} />
             </Suspense>
             <Suspense>
                 <MovieReviews movieId={id} />
-            </Suspense>
+            </Suspense> */}
         </>
     )
 };
