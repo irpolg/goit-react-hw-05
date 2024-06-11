@@ -1,7 +1,7 @@
 import css from './MovieInfo.module.css';
-import MovieCast from '../MovieCast/MovieCast';
-import MovieReviews from '../MovieReviews/MovieReviews';
-import { Suspense } from 'react';
+//import MovieCast from '../MovieCast/MovieCast';
+//import MovieReviews from '../MovieReviews/MovieReviews';
+//import { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
 const defaultImg = {
